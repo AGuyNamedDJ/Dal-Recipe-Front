@@ -1,7 +1,8 @@
-//all links go here to make a SPA application
+// Imports
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Component
 const Navbar = ({context}) => {
     return (
         <nav id="navbar">
@@ -13,4 +14,5 @@ const Navbar = ({context}) => {
     )
 };
 
+// Export
 export default Navbar;

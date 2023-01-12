@@ -17,12 +17,24 @@
   "bugs": {
     "url": "https://github.com/DJRobertson95/Dal-Recipe-Front/issues"
   },
-  "homepage": "https://github.com/DJRobertson95/Dal-Recipe-Front#readme",
+  "homepage": "/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.6.2",
     "react-router-dom": "^6.6.2",
     "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

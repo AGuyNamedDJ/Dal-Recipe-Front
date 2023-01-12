@@ -1,24 +1,41 @@
 // Imports
-import react from "react";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter } from "react-router-dom";
 
 // Import Utilities
+import ErrorPage from "./components//utilities/ErrorPage";
+import FetchForHomepage from "./components/utilities/FetchForHomepage";
+import HomePage from "./components/utilities/HomePage";
 
 // Import Pages
-
+import Breakfast from "./components/pages/Breakfast";
+import Department from "./components/pages/Department";
 
 // Router
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />,
+        element: <FetchForHomepage />, // useEffects & fetches;
         errorElement: <ErrorPage />,
         children: [
             {
                 index: true,
-                element: 
+                element: <HomePage /> // Actual homepage;
+            },
+            {
+                path: "/breakfast",
+                element: <Breakfast />
+            },
+            {
+                path: "/department",
+                element: <Department />
             }
         ]
     }
 ])
+
+// Version 18
+const app = document.getElementById("apps")
+const root = createRoot(app)
+root.render(<RouterProvider router={router} />)
