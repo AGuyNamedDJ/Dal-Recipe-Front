@@ -19,6 +19,7 @@ body {
 }
 
 #navbar-box {
+    border-radius: 2%;
     height: 45px;
     width: 45%;
     background-color: rgba(196, 189, 189, 0.15);
@@ -31,7 +32,6 @@ body {
 
 #navbar-text{
     display: flex;
-    
     color: white;
     font-size: 22px;
     justify-content: center;
@@ -39,6 +39,10 @@ body {
     margin-right: 10px;
     margin-bottom: 8px;
     text-decoration: none;
+}
+
+#navbar-text:hover{
+    color: rgb(175, 80, 80);
 }
 
 #homepage-title{
