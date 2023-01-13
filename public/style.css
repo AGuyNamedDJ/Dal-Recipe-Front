@@ -7,22 +7,37 @@ body {
     max-width: 1440px;
 }
 
-#navbar {
+.navbar {
     position: absolute;
     bottom: 0;
+    display: flex;
+    justify-content: center;
     left: 0;
     right: 0;
     margin: auto;
     width: 80%;
+}
+
+#navbar-box {
+    height: 45px;
+    width: 45%;
+    background-color: rgba(196, 189, 189, 0.15);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
 #navbar-text{
+    display: flex;
+    
     color: white;
-    font-size: 25px;
+    font-size: 22px;
+    justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     text-decoration: none;
 }
 

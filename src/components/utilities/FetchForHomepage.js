@@ -9,7 +9,9 @@ const FetchForHomepage = () => {
         <div>
             
             <Outlet />
-            <Navbar />
+            <div id="navbar-box">
+                <Navbar />
+            </div>
         </div>
     )
 }
