@@ -12,3 +12,5 @@ const Template = () => {
 
 // Export
 export default Template;
+
+// Rememeber IDs(#) are more specific than Classes(.)

@@ -39,10 +39,52 @@ body {
     margin-right: 10px;
     margin-bottom: 8px;
     text-decoration: none;
+    text-shadow: 2px 2px #b6713c;
 }
 
 #navbar-text:hover{
     color: rgb(175, 80, 80);
+}
+
+.error-page-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-page-subbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -55px;
+}
+
+.error-page-image-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+#error-page-pic{
+
+    width: 300px;
+}
+
+#error-page-text{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 3px #b6713c;
+}
+
+#error-page-subtext{
+    font-size: 20px;
+    /* font-style: italic; */
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px #b6713c;
 }
 
 #homepage-title{
@@ -56,6 +98,7 @@ body {
 #homepage-subtitle{
     font-size: 40px;
     font-style: italic;
-    margin-top: -110px;
+    margin-top: -125px;
     text-align: center;
+    text-shadow: 2px 2px #b6713c;
 }
