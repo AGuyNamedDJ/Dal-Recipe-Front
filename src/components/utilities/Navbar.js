@@ -10,6 +10,7 @@ const Navbar = ({context}) => {
             <Link to="/recipes" id="navbar-text">Recipes</Link>
             <Link to="/blog" id="navbar-text">Blog</Link>
             <Link to="/aboutus" id="navbar-text">About Us</Link>
+            <Link to="/search" id="navbar-text">Search</Link>
         </nav>
     )
 };

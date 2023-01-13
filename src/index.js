@@ -7,6 +7,7 @@ import { createRoot } from "react-dom/client";
 import ErrorPage from "./components//utilities/ErrorPage";
 import FetchForHomepage from "./components/utilities/FetchForHomepage";
 import HomePage from "./components/utilities/HomePage";
+import Search from "./components/utilities/Search";
 
 // Import Pages
 import Breakfast from "./components/pages/Breakfast";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/department",
                 element: <Department />
+            },
+            {
+                path: "/search",
+                element: <Search />
             }
         ]
     }

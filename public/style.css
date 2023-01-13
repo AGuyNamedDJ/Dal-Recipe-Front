@@ -1,5 +1,33 @@
 body {
-    background-color: yellow;
-    color: red;
+    background-image: url(https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_359492192.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
     max-width: 1440px;
+}
+
+#navbar{
+    display: flex;
+    justify-content: center;
+}
+#navbar-text{
+    color: white;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+#homepage-title{
+    font-size: 130px;
+    margin-top: 300px;
+    text-align: center;
+}
+
+#homepage-subtitle{
+    font-size: 40px;
+    margin-top: -50px;
+    text-align: center;
 }

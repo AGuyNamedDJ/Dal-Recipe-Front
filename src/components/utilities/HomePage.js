@@ -5,8 +5,8 @@ import React from "react";
 const HomePage = () => {
     return(
         <div>
-            <p>Here is your Homepage.</p>
-            <p>tTEST TEST TEST</p>
+            <p id="homepage-title">Dal-Recipe</p>
+            <p id="homepage-subtitle">Where Food Meets Imagination</p>
         </div>
     )
 };
