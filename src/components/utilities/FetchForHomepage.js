@@ -8,8 +8,8 @@ const FetchForHomepage = () => {
     return (
         <div>
             
-            <Navbar />
             <Outlet />
+            <Navbar />
         </div>
     )
 }

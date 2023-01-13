@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_359492192.jpg);
+    background-image: url(https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,27 +7,36 @@ body {
     max-width: 1440px;
 }
 
-#navbar{
-    display: flex;
-    justify-content: center;
+#navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    text-align: center;
 }
+
 #navbar-text{
     color: white;
     font-size: 25px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 15px;
+    margin-bottom: 15px;
     text-decoration: none;
 }
 
 #homepage-title{
-    font-size: 130px;
-    margin-top: 300px;
+    font-size: 150px;
+    font-weight: bold;
+    margin-top: 250px;
     text-align: center;
+    text-shadow: 3px 4px #b6713c;
 }
 
 #homepage-subtitle{
     font-size: 40px;
-    margin-top: -50px;
+    font-style: italic;
+    margin-top: -110px;
     text-align: center;
 }
