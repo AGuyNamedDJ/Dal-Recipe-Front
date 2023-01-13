@@ -74,7 +74,6 @@ body {
 }
 
 #error-page-pic{
-
     width: 300px;
 }
 
@@ -97,6 +96,7 @@ body {
 #error-page-button-text{
     background-color: #b6713c;
     border-radius: 50%;
+    box-shadow: 2px 9px black;
     width: 120px;
     height: 60px;
     color: white;
