@@ -1,5 +1,6 @@
 // Import
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Functional Component
 const ErrorPage = () => {
@@ -16,6 +17,9 @@ const ErrorPage = () => {
             </div>
             <div class="error-page-subbox">
                 <p id="error-page-subtext">Sorry, we're not able to find what you were looking for.</p>
+            </div>
+            <div class="error-page-button">
+                <Link to="/"><button id="error-page-button-text">Take Me Home</button></Link>
             </div>
         </div>
     )
