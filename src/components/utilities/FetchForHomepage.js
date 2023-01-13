@@ -13,12 +13,60 @@ const FetchForHomepage = () => {
     const contextObject = {
         departmentState: [department, setDepartment],
         breakfastState: [breakfast, setBreakfast],
-        dessertsState: [desserts, setDesserts],
         entreesState: [entrees, setEntrees],
+        dessertsState: [desserts, setDesserts],
         sidesState: [sides, setSides]
     }
     const navigate = useNavigate();
 
+// useEffects
+    // fetchAllDepartment
+    useEffect(() => {
+        console.log("useEffect being triggered for department hook.")
+        async function fetchAllDepartment(){
+            try{
+                const departmentResponse = await fetch(`https://dal-recipe-back.onrender.com/api/department`,{
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+                console.log("This is the department response:", departmentResponse);
+                const departmentData = await departmentResponse.json();
+                console.log("this is the department data:", departmentData);
+
+            // Department Filter
+                // Breakfast Id == 1
+                const breakfastData = departmentData.filter(oneDepartment => {
+                    return oneDepartment.departmentId === 1
+                })
+
+                // Entrees Id == 2
+                const entreesData = departmentData.filter(oneDepartment => {
+                    return oneDepartment.departmentId === 2
+                })
+
+                // Desserts Id == 3
+                const dessertsData = departmentData.filter(oneDepartment => {
+                    return oneDepartment.departmentId === 3
+                })
+
+                // Sides Id == 4
+                const sidesData = departmentData.filter(oneDepartment => {
+                    return oneDepartment.departmentId === 4
+                })
+
+                setDepartment(departmentData)
+                setBreakfast(breakfastData)
+                setEntrees(entreesData)
+                setDesserts(dessertsData)
+                setSides(sidesData)
+            } catch(error) {
+                console.log(error)
+            }
+        }
+        fetchAllDepartment()
+        console.log("End of department hooks.")
+    }, [])
 
 // Functional Component
     return (
