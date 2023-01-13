@@ -39,7 +39,7 @@ body {
     margin-right: 10px;
     margin-bottom: 8px;
     text-decoration: none;
-    text-shadow: 2px 2px #b6713c;
+    text-shadow: 3px 3px #b6713c;
 }
 
 #navbar-text:hover{
@@ -70,7 +70,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin-top: 15px;
 }
 
 #error-page-pic{
@@ -118,7 +118,7 @@ body {
 #homepage-subtitle{
     font-size: 40px;
     font-style: italic;
-    margin-top: -125px;
+    margin-top: -135px;
     text-align: center;
-    text-shadow: 2px 2px #b6713c;
+    text-shadow: 3px 3px #b6713c;
 }
