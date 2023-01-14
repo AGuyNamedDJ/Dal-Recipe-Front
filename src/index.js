@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
 // Import Utilities
+import AboutUs from "./components/utilities/AboutUs";
 import ErrorPage from "./components//utilities/ErrorPage";
 import FetchForHomepage from "./components/utilities/FetchForHomepage";
 import HomePage from "./components/utilities/HomePage";
@@ -11,6 +12,7 @@ import Search from "./components/utilities/Search";
 
 // Import Pages
 import Breakfast from "./components/pages/Breakfast";
+import BreakfastDetail from "./components/pages/BreakfastDetail";
 import Department from "./components/pages/Department";
 
 // Router
@@ -25,8 +27,16 @@ const router = createBrowserRouter([
                 element: <HomePage /> // Actual homepage;
             },
             {
+                path: "/aboutus",
+                element: <AboutUs />
+            },
+            {
                 path: "/breakfast",
                 element: <Breakfast />
+            },
+            {
+                path: "/breakfast/:breakfastId",
+                element: <BreakfastDetail />
             },
             {
                 path: "/department",
