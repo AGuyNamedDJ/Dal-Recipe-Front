@@ -46,6 +46,11 @@ body {
     color: rgb(175, 80, 80);
 }
 
+.Link{
+    color: white;
+    text-decoration: none;
+}
+
 .error-page-box{
     display: flex;
     align-items: center;

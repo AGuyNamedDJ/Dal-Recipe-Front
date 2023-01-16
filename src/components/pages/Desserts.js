@@ -5,7 +5,7 @@ import React from "react";
 const Desserts = () => {
     return(
         <div>
-            <p>Here is your Template.</p>
+            <p>Here is your Desserts.</p>
         </div>
     )
 };

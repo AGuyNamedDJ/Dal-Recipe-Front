@@ -23,7 +23,7 @@ const Department = () => {
                     {
                         breakfastDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <p>{department.departmentName} </p>
+                                <Link to={`/breakfast`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Delicious and hearty breakfast options to start your day off right."</p>
                                 
                             </div>
@@ -37,7 +37,7 @@ const Department = () => {
                     {
                         entreesDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <p>{department.departmentName}</p>
+                                <Link to={`/entrees`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Delicious main course options for any meal of the day."</p>
                             </div>
                         })
@@ -50,7 +50,7 @@ const Department = () => {
                     {
                         dessertsDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <p>{department.departmentName}</p>
+                                <Link to={`/desserts`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Indulgent sweet treats to satisfy your cravings"</p>
                             </div>
                         })
@@ -63,7 +63,7 @@ const Department = () => {
                     {
                         sidesDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <p>{department.departmentName}</p>
+                                <Link to={`/sides`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Savor the sides: delicious accompaniments to enhance your meal"</p>
                             </div>
                         })
