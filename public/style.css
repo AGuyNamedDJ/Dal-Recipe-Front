@@ -46,7 +46,7 @@ body {
     color: rgb(175, 80, 80);
 }
 
-.Link{
+.link{
     color: white;
     text-decoration: none;
 }
@@ -142,7 +142,7 @@ body {
     grid-row-gap: 20px;
 }
 
-#department-box-breakfast{
+.department-box-breakfast{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

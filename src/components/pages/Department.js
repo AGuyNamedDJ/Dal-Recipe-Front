@@ -15,10 +15,11 @@ const Department = () => {
     return(
         <div>
             <p id="title-text">Recipes & Cooking Ideas</p>
+            <br></br>
 
             <div class="department-box">
                 {/* Breakfast */}
-                <div id="department-box-breakfast">
+                <div class="department-box-breakfast">
                     <img src="https://images.squarespace-cdn.com/content/v1/5d38ca4174e198000123709a/1605034683424-L3T9E7Q22FOIAYA6B19F/image-asset.jpeg?format=1500w" id="breakfast-main-image"></img>
                     {
                         breakfastDepartment.map((department, idx) => {
@@ -71,10 +72,10 @@ const Department = () => {
                 </div>
             </div>
 
-            <br></br>
+            {/* <br></br>
             <div id="recipes-explore">Explore Recipes</div>
             <br></br>
-            <br></br>
+            <br></br> */}
         </div>
     )
 };
