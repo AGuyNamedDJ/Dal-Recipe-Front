@@ -6,6 +6,12 @@ import { Link, useOutletContext,useParams } from "react-router-dom";
 const Department = () => {
     const { departmentState: [department, setDepartment] } = useOutletContext();
 
+    const breakfastDepartment = department.filter(department => department.departmentName === 'Breakfast');
+    const entreesDepartment = department.filter(department => department.departmentName === 'Entrees');
+    const dessertsDepartment = department.filter(department => department.departmentName === 'Desserts');
+    const sidesDepartment = department.filter(department => department.departmentName === 'Sides');
+
+
     return(
         <div>
             <p id="title-text">Recipes & Cooking Ideas</p>
@@ -13,9 +19,10 @@ const Department = () => {
             <div class="department-box">
                 <div id="department-box-breakfast">
                     {
-                        department.map((department, idx) => {
+                        breakfastDepartment.map((department, idx) => {
                             return <div key={idx}>
-                                <p id="department-box-text">Name of Department: {department.departmentName}</p>
+                                <img src="https://images.squarespace-cdn.com/content/v1/5d38ca4174e198000123709a/1605034683424-L3T9E7Q22FOIAYA6B19F/image-asset.jpeg?format=1500w" id="breakfast-main-image"></img>
+                                <p id="department-box-text">{department.departmentName}</p>
                             </div>
                         })
                     }
@@ -31,4 +38,20 @@ const Department = () => {
 // Export
 export default Department;
 
-// <img src="https://images.squarespace-cdn.com/content/v1/5d38ca4174e198000123709a/1605034683424-L3T9E7Q22FOIAYA6B19F/image-asset.jpeg?format=1500w" id="breakfast-main-image"></img>
+    // return(
+    //     <div>
+    //         <p id="title-text">Recipes & Cooking Ideas</p>
+
+    //         <div class="department-box">
+    //             {
+    //                 department.map((department, idx) => {
+    //                     return <div key={idx}>
+    //                             <img src="https://images.squarespace-cdn.com/content/v1/5d38ca4174e198000123709a/1605034683424-L3T9E7Q22FOIAYA6B19F/image-asset.jpeg?format=1500w" id="breakfast-main-image"></img>
+    //                             <p id="department-box-text">Name of Department: {department.departmentName}</p>
+    //                         </div>
+    //                 })
+    //             }                
+    //         </div>
+    //     </div>
+    // )
+    
