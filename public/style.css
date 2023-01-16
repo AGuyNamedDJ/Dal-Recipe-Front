@@ -134,6 +134,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    grid-row-gap: 20px;
 }
 
 #department-box-breakfast{
@@ -153,24 +154,59 @@ body {
 }
 
 #department-box-desserts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     width: 50%;
 }
 
 #department-box-sides{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     width: 50%;
 }
 
 #breakfast-main-image{
-    /* height: 45px; */
-    width: 40%;
+    border-radius: 20px;
+    width: 75%;
 }
 
 #entrees-main-image{
-    /* height: 50px; */
-    width: 40%;
+    border-radius: 20px;
+    width: 75%;
+}
+
+#desserts-main-image{
+    border-radius: 20px;
+    width: 75%;
+}
+
+#sides-main-image{
+    border-radius: 20px;
+    width: 75%;
 }
 
 #department-box-text{
     font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    text-shadow: 3px 4px #b6713c;
+}
+
+#department-box-subtext{
+    font-size: 20px;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    text-shadow: 3px 4px #b6713c;
+}
+
+#recipes-explore{
+    font-size: 55px;
+    text-align: center;
     text-shadow: 3px 4px #b6713c;
 }
