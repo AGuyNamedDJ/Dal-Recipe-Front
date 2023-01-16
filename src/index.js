@@ -11,7 +11,7 @@ import HomePage from "./components/utilities/HomePage";
 import Search from "./components/utilities/Search";
 
 // Import Pages
-import Breakfast from "./components/pages/Breakfast";
+import Breakfast from "./components/pages/BreakfastDetail";
 import BreakfastDetail from "./components/pages/BreakfastDetail";
 import Department from "./components/pages/Department";
 import Desserts from "./components/pages/Desserts";

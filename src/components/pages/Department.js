@@ -34,7 +34,7 @@ const Department = () => {
 
                 {/* Entrees */}
                 <div id="department-box-entrees">
-                <img src="https://assets.vogue.com/photos/62714da82a7f6e1661978205/master/w_2560%2Cc_limit/FN-MetGala-02_00284.jpg" id="entrees-main-image"></img>
+                    <img src="https://assets.vogue.com/photos/62714da82a7f6e1661978205/master/w_2560%2Cc_limit/FN-MetGala-02_00284.jpg" id="entrees-main-image"></img>
                     {
                         entreesDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
@@ -47,7 +47,7 @@ const Department = () => {
 
                 {/* Desserts */}
                 <div id="department-box-desserts">
-                <img src="https://images7.alphacoders.com/409/thumb-1920-409387.jpg" id="desserts-main-image"></img>
+                    <img src="https://images7.alphacoders.com/409/thumb-1920-409387.jpg" id="desserts-main-image"></img>
                     {
                         dessertsDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
@@ -60,7 +60,7 @@ const Department = () => {
 
                 {/* Sides */}
                 <div id="department-box-sides">
-                <img src="https://media.istockphoto.com/id/160117152/photo/korean-food-side-dishes.jpg?s=612x612&w=0&k=20&c=B4W2Ry4FFrN7v6DQ9cHuu-5-6PaTfZpBDkSz24Gxsc0=" id="sides-main-image"></img>
+                    <img src="https://media.istockphoto.com/id/160117152/photo/korean-food-side-dishes.jpg?s=612x612&w=0&k=20&c=B4W2Ry4FFrN7v6DQ9cHuu-5-6PaTfZpBDkSz24Gxsc0=" id="sides-main-image"></img>
                     {
                         sidesDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
