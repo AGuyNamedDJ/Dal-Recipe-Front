@@ -4,7 +4,7 @@ import { Link, useOutletContext, useParams } from "react-router-dom";
 
 // Functional Component
 const Breakfast = () => {
-    const [breakfast, setBreakfast] = useState ([]);
+    const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
 
     return(
         <div>
@@ -15,7 +15,8 @@ const Breakfast = () => {
                 {
                     breakfast && breakfast.length ? breakfast.map((recipe, idx) => {
                         return <div key={idx}>
-                            <p>Name:</p>
+                            <h2>{recipe.breakfastName}</h2>
+                            <p>{recipe.image}</p>
 
                         </div>
                     }) : <p>No recipes to display - Our chefs are busy preparing</p>
@@ -24,5 +25,11 @@ const Breakfast = () => {
         </div>
     )
 };
+
 // Export
 export default Breakfast;
+
+{/* <div key={item.breakfastId}>
+<h2>{item.breakfastName}</h2>
+<p>{item.image}</p>
+</div> */}

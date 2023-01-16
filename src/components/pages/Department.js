@@ -1,6 +1,6 @@
 // Import
 import React, { useEffect, useState } from "react";
-import { Link, useOutletContext,useParams } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
 
 // Functional Component
 const Department = () => {
