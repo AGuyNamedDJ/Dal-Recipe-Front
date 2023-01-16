@@ -72,8 +72,9 @@ const Department = () => {
             </div>
 
             <br></br>
-            <br></br>
             <div id="recipes-explore">Explore Recipes</div>
+            <br></br>
+            <br></br>
         </div>
     )
 };

@@ -14,6 +14,9 @@ import Search from "./components/utilities/Search";
 import Breakfast from "./components/pages/Breakfast";
 import BreakfastDetail from "./components/pages/BreakfastDetail";
 import Department from "./components/pages/Department";
+import Desserts from "./components/pages/Desserts";
+import Entrees from "./components/pages/Entrees";
+import Sides from "./components/pages/Sides";
 
 // Router
 const router = createBrowserRouter([
@@ -41,6 +44,18 @@ const router = createBrowserRouter([
             {
                 path: "/department",
                 element: <Department />
+            },
+            {
+                path: "/desserts",
+                element: <Desserts />
+            },
+            {
+                path: "/entrees",
+                element: <Entrees />
+            },
+            {
+                path: "/sides",
+                element: <Sides />
             },
             {
                 path: "/search",
