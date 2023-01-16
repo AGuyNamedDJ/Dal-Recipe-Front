@@ -137,7 +137,6 @@ body {
 }
 
 #department-box-breakfast{
-    background-color: tan;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -146,6 +145,10 @@ body {
 }
 
 #department-box-entrees{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     width: 50%;
 }
 
@@ -158,7 +161,13 @@ body {
 }
 
 #breakfast-main-image{
-    width: 45%;
+    /* height: 45px; */
+    width: 40%;
+}
+
+#entrees-main-image{
+    /* height: 50px; */
+    width: 40%;
 }
 
 #department-box-text{

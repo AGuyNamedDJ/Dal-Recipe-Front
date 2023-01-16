@@ -18,18 +18,25 @@ const Department = () => {
 
             <div class="department-box">
                 <div id="department-box-breakfast">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5d38ca4174e198000123709a/1605034683424-L3T9E7Q22FOIAYA6B19F/image-asset.jpeg?format=1500w" id="breakfast-main-image"></img>
                     {
                         breakfastDepartment.map((department, idx) => {
                             return <div key={idx}>
-                                <img src="https://images.squarespace-cdn.com/content/v1/5d38ca4174e198000123709a/1605034683424-L3T9E7Q22FOIAYA6B19F/image-asset.jpeg?format=1500w" id="breakfast-main-image"></img>
                                 <p id="department-box-text">{department.departmentName}</p>
                             </div>
                         })
                     }
                 </div>
-                <div id="department-box-entrees"></div>
-                <div id="department-box-desserts"></div>
-                <div id="department-box-sides"></div>
+                <div id="department-box-entrees">
+                <img src="https://assets.vogue.com/photos/62714da82a7f6e1661978205/master/w_2560%2Cc_limit/FN-MetGala-02_00284.jpg" id="entrees-main-image"></img>
+                    {
+                        entreesDepartment.map((department, idx) => {
+                            return <div key={idx}>
+                                <p id="department-box-text">{department.departmentName}</p>
+                            </div>
+                        })
+                    }
+                </div>
             </div>
         </div>
     )
