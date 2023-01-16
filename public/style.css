@@ -122,3 +122,46 @@ body {
     text-align: center;
     text-shadow: 3px 3px #b6713c;
 }
+
+#title-text{
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 4px #b6713c;
+}
+
+.department-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#department-box-breakfast{
+    background-color: tan;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 50%;
+}
+
+#department-box-entrees{
+    width: 50%;
+}
+
+#department-box-desserts{
+    width: 50%;
+}
+
+#department-box-sides{
+    width: 50%;
+}
+
+#breakfast-main-image{
+    width: 45%;
+}
+
+#department-box-text{
+    font-size: 30px;
+    text-shadow: 3px 4px #b6713c;
+}
