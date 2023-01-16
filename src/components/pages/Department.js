@@ -12,13 +12,12 @@ const Department = () => {
     const sidesDepartment = department.filter(department => department.departmentName === 'Sides');
 
 
+    {/* This return format is for a signle item map. */}
     return(
         <div>
             <p id="title-text">Recipes & Cooking Ideas</p>
             <br></br>
-            
-            {/* This return format is for a signle item map. */}
-
+    
             <div class="department-box">
                 {/* Breakfast */}
                 <div class="department-box-breakfast">

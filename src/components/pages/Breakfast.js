@@ -6,23 +6,27 @@ import { Link, useOutletContext, useParams } from "react-router-dom";
 const Breakfast = () => {
     const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
 
+    {/* This return format is to map all. */}
     return(
-        <div>
-            <p id="title-text">Breakfast</p>
-            {/* This return format is to map all. */}
+        breakfast && breakfast.length ? breakfast.map((recipe, idx) => {            
+            return (
+                <div key={idx}>
+                <p id="title-text">Breakfast</p>
 
-            <div id="recipe-box">
-                {
-                    breakfast && breakfast.length ? breakfast.map((recipe, idx) => {
-                        return <div key={idx}>
-                            <h2>{recipe.breakfastName}</h2>
-                            <p>{recipe.image}</p>
+                    <div id="recipe-box">
+                        <div id="recipe-box-item">
 
+                            {/* Item Template */}
+                            <p id="department-box-text">{recipe.breakfastName}</p>
+                            <img src={recipe.image} id="recipe-image"></img>
+                            <p>DINNERS</p>
+                            <p id="department-box-text">{recipe.time_to_prepare}</p>
+                            <button id="view-recipe-button"><Link id="view-recipe-button link" to={`/department/breakfast/${recipe.breakfastId}`}>View Recipe</Link></button>
                         </div>
-                    }) : <p>No recipes to display - Our chefs are busy preparing</p>
-                }
-            </div>
-        </div>
+                    </div>
+                </div>
+            )
+        }) : "No Recipes to display, our Chefs are busy preparing for you!"
     )
 };
 
