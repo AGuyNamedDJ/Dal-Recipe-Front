@@ -11,7 +11,7 @@ import HomePage from "./components/utilities/HomePage";
 import Search from "./components/utilities/Search";
 
 // Import Pages
-import Breakfast from "./components/pages/BreakfastDetail";
+import Breakfast from "./components/pages/Breakfast";
 import BreakfastDetail from "./components/pages/BreakfastDetail";
 import Department from "./components/pages/Department";
 import Desserts from "./components/pages/Desserts";
@@ -34,11 +34,11 @@ const router = createBrowserRouter([
                 element: <AboutUs />
             },
             {
-                path: "/breakfast",
+                path: "/department/breakfast",
                 element: <Breakfast />
             },
             {
-                path: "/breakfast/:breakfastId",
+                path: "/department/breakfast/:breakfastId",
                 element: <BreakfastDetail />
             },
             {
@@ -46,15 +46,15 @@ const router = createBrowserRouter([
                 element: <Department />
             },
             {
-                path: "/desserts",
+                path: "/department/desserts",
                 element: <Desserts />
             },
             {
-                path: "/entrees",
+                path: "/department/entrees",
                 element: <Entrees />
             },
             {
-                path: "/sides",
+                path: "/department/sides",
                 element: <Sides />
             },
             {

@@ -3,13 +3,13 @@ import React, { useState, useEffect} from "react"
 import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom"
 
 // Functional Component
-const Breakfast = () => {
+const BreakfastDetail = () => {
     return(
         <div>
-            <p>Here is your Breakfast.</p>
+            <p>Here is your Breakfast Detail.</p>
         </div>
     )
 };
 
 // Export
-export default Breakfast;
+export default BreakfastDetail;

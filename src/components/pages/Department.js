@@ -16,6 +16,8 @@ const Department = () => {
         <div>
             <p id="title-text">Recipes & Cooking Ideas</p>
             <br></br>
+            
+            {/* This return format is for a signle item map. */}
 
             <div class="department-box">
                 {/* Breakfast */}
@@ -24,7 +26,7 @@ const Department = () => {
                     {
                         breakfastDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <Link to={`/breakfast`} class="link">{department.departmentName} </Link>
+                                <Link to={`/department/breakfast`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Delicious and hearty breakfast options to start your day off right."</p>
                                 
                             </div>
@@ -38,7 +40,7 @@ const Department = () => {
                     {
                         entreesDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <Link to={`/entrees`} class="link">{department.departmentName} </Link>
+                                <Link to={`/department/entrees`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Delicious main course options for any meal of the day."</p>
                             </div>
                         })
@@ -51,7 +53,7 @@ const Department = () => {
                     {
                         dessertsDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <Link to={`/desserts`} class="link">{department.departmentName} </Link>
+                                <Link to={`/department/desserts`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Indulgent sweet treats to satisfy your cravings"</p>
                             </div>
                         })
@@ -64,7 +66,7 @@ const Department = () => {
                     {
                         sidesDepartment.map((department, idx) => {
                             return <div id="department-box-text" key={idx}>
-                                <Link to={`/sides`} class="link">{department.departmentName} </Link>
+                                <Link to={`/department/sides`} class="link">{department.departmentName} </Link>
                                 <p id="department-box-subtext">"Savor the sides: delicious accompaniments to enhance your meal"</p>
                             </div>
                         })
