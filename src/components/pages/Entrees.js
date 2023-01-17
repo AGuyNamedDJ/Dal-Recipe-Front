@@ -23,7 +23,7 @@ const Entrees = () => {
                         <p id="recipe-text">{recipe.entreesName}</p>
                         <p id="recipe-type">Serving Size: {recipe.serving_size}</p>
                         <p id="recipe-ttp">Prep Time: {recipe.time_to_prepare}</p>
-                        <button id="view-recipe-button"><Link id="view-recipe-button" class="link" to={`/department/entrees/${recipe.entreesId}`}>View</Link></button>
+                        <button id="view-recipe-button"><Link id="view-recipe-button" className="link" to={`/department/entrees/${recipe.entreesId}`}>View</Link></button>
                     </div>
 c
                 </div>

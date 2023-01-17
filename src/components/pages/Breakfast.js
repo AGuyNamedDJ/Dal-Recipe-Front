@@ -6,10 +6,6 @@ import { Link, useOutletContext } from "react-router-dom";
 // Functional Component
 const Breakfast = () => {
     const { breakfastsState: [breakfasts, setBreakfasts] } = useOutletContext();
-    // const { breakfastId } = useParams()
-
-    // console.log("bid", breakfasts.breakfastid)
-    // console.log("breakfast", breakfastId)
 
     {/* This return format is to map all. */}
     return(

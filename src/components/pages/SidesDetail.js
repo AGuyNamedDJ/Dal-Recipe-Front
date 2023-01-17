@@ -3,60 +3,57 @@ import React, { useState, useEffect} from "react";
 import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom";
 
 // Functional Component
-const sidesDetail = () => {
+const SidesDetail = () => {
     const { sidesState: [sides, setSides] } = useOutletContext();
-
-    // console.log("What i wanat see", sides[11])
     const navigate = useNavigate();
+    const {sidesId} = useParams();
 
-    // Establishing new State;
-    const [moreSidesDetail, setMoreSidesDetail] = useState({});
-
-    console.log("sidesId", sides.sidesId)
+    const [localSides, setLocalSides] = useState({})
 
     // fetchSidesDetail
     useEffect (() => {
+        console.log("BID", sidesId)
         async function fetchSidesDetail(){
             // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/sides/${sides.sidesId}`,{
-                headers: {
-                    'Content-Type' : 'application/json'
-                }
-            })
-            // Translate the promise data;
-            console.log("Response:", detailedResponse)
-            const detailedData = await detailedResponse.json();
-            console.log("Here is translated Json:", detailedData)
-
+            try{
+                const response = await fetch (`https://dal-recipe-back.onrender.com/api/sides/${sidesId}`,{
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+                // Translate the promise data;
+                console.log("Response:", response)
+                const food = await response.json();
+                console.log("Here is translated Json:", food)
+                setLocalSides(food)
+            } catch (error)
+                {console.error(error)}
             // Set the State
-            setMoreSidesDetail(detailedData)
         }
         fetchSidesDetail()
     }, [])
-    
-    console.log("moreSidesDetail:", moreSidesDetail)
     
     // Return
     return(
         <div className="more-detail">
             {/* Name */}
             {
-                moreSidesDetail.sidesName ?
-                <p id="recipe-detail-name">{moreSidesDetail.sidesName}</p>:
+                localSides.sidesName ?
+                <p id="recipe-detail-name">{localSides.sidesName}</p>:
                 <p>Name can not be viewed</p>
             }
 
             {/* Description */}
             {
-                moreSidesDetail.description ?
-                <p id="recipe-detail-description">{moreSidesDetail.description}</p>:
+                localSides.description ?
+                <p id="recipe-detail-description">{localSides.description}</p>:
                 <p>Description can not be viewed</p>
             }
 
             {/* Image */}
             {
-                moreSidesDetail.image ?
-                <img src={moreSidesDetail.image} id="recipe-detail-image"></img>:
+                localSides.image ?
+                <img src={localSides.image} id="recipe-detail-image"></img>:
                 <p>Image can not be viewed</p>
             }
             
@@ -65,8 +62,8 @@ const sidesDetail = () => {
             
             {/* Ingredients */}
             {
-                moreSidesDetail.ingredients ?
-                <p id="recipe-detail-ingredients">{moreSidesDetail.ingredients}</p>:
+                localSides.ingredients ?
+                <p id="recipe-detail-ingredients">{localSides.ingredients}</p>:
                 <p>Ingredients can not be viewed</p>
             }
             
@@ -74,8 +71,8 @@ const sidesDetail = () => {
             <p id="recipe-detail-subtitle">Method</p>
             {/* Instructions */}
             {
-                moreSidesDetail.instructions ?
-                <p id="recipe-detail-instructions">Instructions: {moreSidesDetail.instructions}</p>:
+                localSides.instructions ?
+                <p id="recipe-detail-instructions">Instructions: {localSides.instructions}</p>:
                 <p>Instructions can not be viewed</p>
             }
             
@@ -86,4 +83,4 @@ const sidesDetail = () => {
 };
 
 // Export
-export default sidesDetail;
+export default SidesDetail;

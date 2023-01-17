@@ -3,60 +3,57 @@ import React, { useState, useEffect} from "react";
 import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom";
 
 // Functional Component
-const EntreesDetail = () => {
+const Entrees = () => {
     const { entreesState: [entrees, setEntrees] } = useOutletContext();
-
-    // console.log("What i wanat see", entrees[11])
     const navigate = useNavigate();
+    const {entreesId} = useParams();
 
-    // Establishing new State;
-    const [moreEntreesDetail, setMoreEntreesDetail] = useState({});
+    const [localEntrees, setLocalEntrees] = useState({})
 
-    console.log("entreesId", entrees.entreesId)
-
-    // fetchentreesDetail
+    // fetchEntreesDetail
     useEffect (() => {
-        async function fetchentreesDetail(){
+        console.log("BID", entreesId)
+        async function fetchEntreesDetail(){
             // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/entrees/${entrees.entreesId}`,{
-                headers: {
-                    'Content-Type' : 'application/json'
-                }
-            })
-            // Translate the promise data;
-            console.log("Response:", detailedResponse)
-            const detailedData = await detailedResponse.json();
-            console.log("Here is translated Json:", detailedData)
-
+            try{
+                const response = await fetch (`https://dal-recipe-back.onrender.com/api/entrees/${entreesId}`,{
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+                // Translate the promise data;
+                console.log("Response:", response)
+                const food = await response.json();
+                console.log("Here is translated Json:", food)
+                setLocalEntrees(food)
+            } catch (error)
+                {console.error(error)}
             // Set the State
-            setMoreEntreesDetail(detailedData)
         }
         fetchEntreesDetail()
     }, [])
-    
-    console.log("moreEntreesDetail:", moreEntreesDetail)
     
     // Return
     return(
         <div className="more-detail">
             {/* Name */}
             {
-                moreEntreesDetail.entreesName ?
-                <p id="recipe-detail-name">{moreEntreesDetail.entreesName}</p>:
+                localEntrees.entreesName ?
+                <p id="recipe-detail-name">{localEntrees.entreesName}</p>:
                 <p>Name can not be viewed</p>
             }
 
             {/* Description */}
             {
-                moreEntreesDetail.description ?
-                <p id="recipe-detail-description">{moreEntreesDetail.description}</p>:
+                localEntrees.description ?
+                <p id="recipe-detail-description">{localEntrees.description}</p>:
                 <p>Description can not be viewed</p>
             }
 
             {/* Image */}
             {
-                moreEntreesDetail.image ?
-                <img src={moreEntreesDetail.image} id="recipe-detail-image"></img>:
+                localEntrees.image ?
+                <img src={localEntrees.image} id="recipe-detail-image"></img>:
                 <p>Image can not be viewed</p>
             }
             
@@ -65,8 +62,8 @@ const EntreesDetail = () => {
             
             {/* Ingredients */}
             {
-                moreEntreesDetail.ingredients ?
-                <p id="recipe-detail-ingredients">{moreEntreesDetail.ingredients}</p>:
+                localEntrees.ingredients ?
+                <p id="recipe-detail-ingredients">{localEntrees.ingredients}</p>:
                 <p>Ingredients can not be viewed</p>
             }
             
@@ -74,8 +71,8 @@ const EntreesDetail = () => {
             <p id="recipe-detail-subtitle">Method</p>
             {/* Instructions */}
             {
-                moreEntreesDetail.instructions ?
-                <p id="recipe-detail-instructions">Instructions: {moreEntreesDetail.instructions}</p>:
+                localEntrees.instructions ?
+                <p id="recipe-detail-instructions">Instructions: {localEntrees.instructions}</p>:
                 <p>Instructions can not be viewed</p>
             }
             
@@ -86,4 +83,4 @@ const EntreesDetail = () => {
 };
 
 // Export
-export default EntreesDetail;
+export default Entrees;

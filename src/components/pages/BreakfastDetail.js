@@ -7,18 +7,8 @@ const BreakfastDetail = () => {
     const { breakfastsState: [breakfasts, setBreakfasts] } = useOutletContext();
     const navigate = useNavigate();
     const {breakfastId} = useParams();
-    // const localBreakfast = breakfast.find(bf => bf.id == breakfastId)
-
 
     const [localBreakfasts, setLocalBreakfasts] = useState({})
-    // const bfParams = useParams()
-    //     useEffect(() => {
-    //     function fetchBreakfast() {
-    //     // fetch using bfParams
-    //     setLocalBreakfasts(breakfastFromFetch)
-    //     }
-    //     fetchBreakfast()
-    //     }, [])
 
     // fetchBreakfastDetail
     useEffect (() => {
@@ -26,7 +16,6 @@ const BreakfastDetail = () => {
         async function fetchBreakfastDetail(){
             // Fetch;
             try{
-
                 const response = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/${breakfastId}`,{
                     headers: {
                         'Content-Type' : 'application/json'
@@ -34,18 +23,15 @@ const BreakfastDetail = () => {
                 })
                 // Translate the promise data;
                 console.log("Response:", response)
-                const breakfast = await response.json();
-                console.log("Here is translated Json:", breakfast)
-                setLocalBreakfasts(breakfast)
+                const food = await response.json();
+                console.log("Here is translated Json:", food)
+                setLocalBreakfasts(food)
             } catch (error)
                 {console.error(error)}
             // Set the State
         }
         fetchBreakfastDetail()
     }, [])
-    
-    // console.log("moreBreakfastDetail:", moreBreakfastDetail)
-    // console.log("breakfast", breakfastId)
     
     // Return
     return(

@@ -6,53 +6,54 @@ import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom
 const DessertsDetail = () => {
     const { dessertsState: [desserts, setDesserts] } = useOutletContext();
     const navigate = useNavigate();
+    const {dessertsId} = useParams();
 
-    // Establishing new State;
-    const [moreDessertsDetail, setMoreDessertsDetail] = useState({});
+    const [localDesserts, setLocalDesserts] = useState({})
 
     // fetchDessertsDetail
     useEffect (() => {
+        console.log("BID", dessertsId)
         async function fetchDessertsDetail(){
             // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/desserts/${dessertsId}`,{
-                headers: {
-                    'Content-Type' : 'application/json'
-                }
-            })
-            // Translate the promise data;
-            console.log("Response:", detailedResponse)
-            const detailedData = await detailedResponse.json();
-            console.log("Here is translated Json:", detailedData)
-
+            try{
+                const response = await fetch (`https://dal-recipe-back.onrender.com/api/desserts/${dessertsId}`,{
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+                // Translate the promise data;
+                console.log("Response:", response)
+                const food = await response.json();
+                console.log("Here is translated Json:", food)
+                setLocalDesserts(food)
+            } catch (error)
+                {console.error(error)}
             // Set the State
-            setMoreDessertsDetail(detailedData)
         }
         fetchDessertsDetail()
     }, [])
-    
-    console.log("moreDessertsDetail:", moreDessertsDetail)
     
     // Return
     return(
         <div className="more-detail">
             {/* Name */}
             {
-                moreDessertsDetail.dessertsName ?
-                <p id="recipe-detail-name">{moreDessertsDetail.dessertsName}</p>:
+                localDesserts.dessertsName ?
+                <p id="recipe-detail-name">{localDesserts.dessertsName}</p>:
                 <p>Name can not be viewed</p>
             }
 
             {/* Description */}
             {
-                moreDessertsDetail.description ?
-                <p id="recipe-detail-description">{moreDessertsDetail.description}</p>:
+                localDesserts.description ?
+                <p id="recipe-detail-description">{localDesserts.description}</p>:
                 <p>Description can not be viewed</p>
             }
 
             {/* Image */}
             {
-                moreDessertsDetail.image ?
-                <img src={moreDessertsDetail.image} id="recipe-detail-image"></img>:
+                localDesserts.image ?
+                <img src={localDesserts.image} id="recipe-detail-image"></img>:
                 <p>Image can not be viewed</p>
             }
             
@@ -61,8 +62,8 @@ const DessertsDetail = () => {
             
             {/* Ingredients */}
             {
-                moreDessertsDetail.ingredients ?
-                <p id="recipe-detail-ingredients">{moreDessertsDetail.ingredients}</p>:
+                localDesserts.ingredients ?
+                <p id="recipe-detail-ingredients">{localDesserts.ingredients}</p>:
                 <p>Ingredients can not be viewed</p>
             }
             
@@ -70,8 +71,8 @@ const DessertsDetail = () => {
             <p id="recipe-detail-subtitle">Method</p>
             {/* Instructions */}
             {
-                moreDessertsDetail.instructions ?
-                <p id="recipe-detail-instructions">Instructions: {moreDessertsDetail.instructions}</p>:
+                localDesserts.instructions ?
+                <p id="recipe-detail-instructions">Instructions: {localDesserts.instructions}</p>:
                 <p>Instructions can not be viewed</p>
             }
             

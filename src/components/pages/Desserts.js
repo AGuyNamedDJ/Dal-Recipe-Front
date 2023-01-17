@@ -1,6 +1,7 @@
 // Import
 import React, { useEffect, useState } from "react";
-import { Link, useOutletContext, useParams } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
+
 
 // Functional Component
 const Desserts = () => {
@@ -10,7 +11,7 @@ const Desserts = () => {
     return(
         
         desserts && desserts.length ? desserts.map((recipe, idx) => {  
-            <p class="title-text">Desserts</p>          
+            <p className="title-text">Desserts</p>          
             return (
                 <div key={idx} className="recipe-box">
                     {/* Image */}
@@ -23,7 +24,7 @@ const Desserts = () => {
                         <p id="recipe-text">{recipe.dessertsName}</p>
                         <p id="recipe-type">Serving Size: {recipe.serving_size}</p>
                         <p id="recipe-ttp">Prep Time: {recipe.time_to_prepare}</p>
-                        <button id="view-recipe-button"><Link id="view-recipe-button" class="link" to={`/department/desserts/${recipe.dessertsId}`}>View</Link></button>
+                        <button id="view-recipe-button"><Link id="view-recipe-button" className="link" to={`/department/desserts/${recipe.dessertsId}`}>View</Link></button>
                     </div>
 c
                 </div>
