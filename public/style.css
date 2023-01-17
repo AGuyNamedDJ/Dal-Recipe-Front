@@ -221,16 +221,15 @@ body {
 .recipe-box{
     display: flex;
     align-items: center;
-    width: 100%;
-    /* row-gap: 100px; */
+    width: 95%;
     padding: 25px;
     text-align: center;
-    margin: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: auto;
+    /* margin-left: 24px;
+    margin-right: 24px; */
+    /* row-gap: 80px; */
     justify-content: space-between;
 }
-
 
 #recipe-image{
     display: flex;
@@ -245,6 +244,10 @@ body {
     font-size: 60px;
     text-shadow: 3px 4px #b6713c;
     margin-top: -10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #recipe-type{
