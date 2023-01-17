@@ -266,3 +266,43 @@ body {
     box-shadow: 1px 1px black;
     border-radius: 50%;
 }
+
+/* Recipe Dettail */
+.more-detail{
+    background-color: rgba(215, 215, 215, 0.1);
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+#recipe-detail-name{
+    font-size: 65px;
+    font-weight: bold;
+    margin-left: 20%;
+    text-shadow: 3px 4px #b6713c;
+}
+
+#recipe-detail-description{
+    font-size: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+#recipe-detail-image{
+    border-radius: 8%;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+#recipe-detail-ingredients{
+    font-size: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#recipe-detail-instructions{
+    font-size: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+}

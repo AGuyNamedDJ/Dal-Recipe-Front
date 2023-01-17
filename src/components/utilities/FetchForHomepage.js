@@ -5,6 +5,7 @@ import { Outlet, useNavigate, useOutletContext, useParams} from "react-router-do
 
 // State
 const FetchForHomepage = () => {
+    // Establishing new State;
     const [department, setDepartment] = useState ([]);
         // The Getter,  The Setter
     const [breakfast, setBreakfast] = useState ([]);
@@ -34,7 +35,7 @@ const FetchForHomepage = () => {
                 //Translate the promise data;
                 // console.log("This is the Breakfast response:", response)
                 const breakfastData = await response.json();
-                console.log("This is the translated Breakfast JSON response:", breakfastData);
+                // console.log("This is the translated Breakfast JSON response:", breakfastData);
 
                 //Save the data to the State;
                 setBreakfast(breakfastData)
@@ -59,7 +60,7 @@ const FetchForHomepage = () => {
                 // Translate the promise data;
                 // console.log("This is the Department response:", response)
                 const departmentData = await response.json();
-                console.log("This is the ranslated Department JSON response:", departmentData);
+                // console.log("This is the ranslated Department JSON response:", departmentData);
 
                 // Save the data to the State;
                 setDepartment(departmentData)
@@ -84,7 +85,7 @@ const FetchForHomepage = () => {
                 // Translate the promise data;
                 // console.log("This is the Desserts response:", response)
                 const dessertsData = await response.json();
-                console.log("This is the ranslated Desserts JSON response:", dessertsData);
+                // console.log("This is the ranslated Desserts JSON response:", dessertsData);
 
                 // Save the data to the State
                 setDesserts(dessertsData)
@@ -109,7 +110,7 @@ const FetchForHomepage = () => {
                 // Translate the promise data;
                 // console.log("This is the Entrees response:", response)
                 const entreesData = await response.json();
-                console.log("This is the ranslated Entrees JSON response:", entreesData);
+                // console.log("This is the ranslated Entrees JSON response:", entreesData);
 
                 //Save the data to the State;
                 setEntrees(entreesData)
@@ -134,7 +135,7 @@ const FetchForHomepage = () => {
                 // Translate the promise data;
                 // console.log("This is the Sides response:", response)
                 const sidesData = await response.json();
-                console.log("This is the ranslated Sides JSON response:", sidesData);
+                // console.log("This is the ranslated Sides JSON response:", sidesData);
 
                 // Save the data to the State;
                 setSides(sidesData)
