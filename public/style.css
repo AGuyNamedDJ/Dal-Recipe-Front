@@ -315,3 +315,15 @@ body {
     margin-right: 20%;
     text-shadow: 3px 4px #b6713c;
 }
+
+#go-back-button{
+    display: block;
+    margin: 0 auto;
+    color: white;
+    box-shadow: 2px 3px black;
+    background-color: #b6713c;
+    border-radius: 50%;
+    font-size: 30px;
+    width: 110px;
+    height: 55px;
+}

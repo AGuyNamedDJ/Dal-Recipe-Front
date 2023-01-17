@@ -1,10 +1,11 @@
 // Import
-import React, { useState, useEffect} from "react"
-import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom"
+import React, { useState, useEffect} from "react";
+import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom";
 
 // Functional Component
 const BreakfastDetail = () => {
     const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
+    const navigate = useNavigate();
 
     // Establishing new State;
     const [moreBreakfastDetail, setMoreBreakfastDetail] = useState({});
@@ -74,6 +75,8 @@ const BreakfastDetail = () => {
                 <p>Instructions can not be viewed</p>
             }
             
+            {/* Go Back Button */}
+            <button onClick={() => navigate(-1)} id="go-back-button">Back</button>
         </div>
     )
 };
