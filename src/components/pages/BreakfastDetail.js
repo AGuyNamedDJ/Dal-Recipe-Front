@@ -5,16 +5,20 @@ import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom
 // Functional Component
 const BreakfastDetail = () => {
     const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
+
+    console.log("What i wanat see", breakfast[11])
     const navigate = useNavigate();
 
     // Establishing new State;
     const [moreBreakfastDetail, setMoreBreakfastDetail] = useState({});
 
+    console.log("BreakfastId", breakfast.breakfastId)
+
     // fetchBreakfastDetail
     useEffect (() => {
         async function fetchBreakfastDetail(){
             // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/11`,{
+            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/${breakfast.breakfastId}`,{
                 headers: {
                     'Content-Type' : 'application/json'
                 }
