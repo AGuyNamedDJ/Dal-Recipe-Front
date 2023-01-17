@@ -336,7 +336,7 @@ body {
     margin: 0 auto;
     text-align: center;
     padding: 3%;
-    /* background-color: #f2f2f2; */
+    background-color: rgba(215, 215, 215, 0.1);
     border-radius: 10px;
     box-shadow: 0px 0px 10px #c9c9c9;
 }
@@ -348,10 +348,68 @@ body {
 }
 
 .about-us-description {
-    font-size: 1.2em;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 1.5;
     text-shadow: 3px 4px #b6713c;
     margin-bottom: 3%;
     margin-top: 30px;
+}
+
+/* Blog Page */
+/* Blog Container */
+.blog-container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    text-align: center;
+    /* padding: 3%; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #c9c9c9;
+    background-color: rgba(215, 215, 215, 0.1);
+    /* margin-left: 100px;
+    margin-right: 50px; */
+}
+
+/* Blog Header */
+.blog-header {
+    font-size: 60px;
+    text-shadow: 3px 4px #b6713c;
+    margin-bottom: 2%;
+}
+
+/* Blog Section */
+.blog-section {
+    margin-bottom: 50px;
+}
+
+/* Blog Section Title */
+.blog-section-title {
+    font-size: 30px;
+    text-shadow: 3px 4px #b6713c;
+    margin-bottom: 10px;
+}
+
+/* Blog Section Date */
+.blog-section-date {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 3px 4px #b6713c;
+}
+
+/* Blog Section Description */
+.blog-section-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: left;
+    text-shadow: 3px 4px #b6713c;
+    font-size: 20px;
+}
+
+/* Blog Section List */
+.blog-section-list {
+    list-style-type: square;
+    text-align: left;
+    font-size: 1.2em;
+    text-shadow: 3px 4px #b6713c;
+    font-size: 20px;
 }
