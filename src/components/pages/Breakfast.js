@@ -1,39 +1,21 @@
 // Import
 import React, { useEffect, useState } from "react";
-import { Link, useOutletContext, useParams } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
+
 
 // Functional Component
 const Breakfast = () => {
-    const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
+    const { breakfastsState: [breakfasts, setBreakfasts] } = useOutletContext();
+    // const { breakfastId } = useParams()
 
-    // Establishing new State;
-    const [moreBreakfastDetail, setMoreBreakfastDetail] = useState({});
-
-    // fetchBreakfastDetail
-    useEffect (() => {
-        async function fetchBreakfastDetail(){
-            // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/:${breakfast.breakfastId}`,{
-                headers: {
-                    'Content-Type' : 'application/json'
-                }
-            })
-            // Translate the promise data;
-            console.log("Response:", detailedResponse)
-            const detailedData = await detailedResponse.json();
-            console.log("Here is translated Json:", detailedData)
-
-            // Set the State
-            setMoreBreakfastDetail(detailedData)
-        }
-        fetchBreakfastDetail()
-    }, [])
+    // console.log("bid", breakfasts.breakfastid)
+    // console.log("breakfast", breakfastId)
 
     {/* This return format is to map all. */}
     return(
         
-        breakfast && breakfast.length ? breakfast.map((recipe, idx) => {  
-            <p class="title-text">Breakfast</p>          
+        breakfasts && breakfasts.length ? breakfasts.map((recipe, idx) => {  
+            <p className="title-text">Breakfast</p>          
             return (
                 <div key={idx} className="recipe-box">
                     {/* Image */}
@@ -46,7 +28,8 @@ const Breakfast = () => {
                         <p id="recipe-text">{recipe.breakfastName}</p>
                         <p id="recipe-type">Serving Size: {recipe.serving_size}</p>
                         <p id="recipe-ttp">Prep Time: {recipe.time_to_prepare}</p>
-                        <button id="view-recipe-button"><Link id="view-recipe-button" class="link" to={`/department/breakfast/:${recipe.breakfastId}`}>View</Link></button>
+                        <p id="recipe-ttp">Id: {recipe.breakfastId}</p>
+                        <button id="view-recipe-button"><Link id="view-recipe-button" className="link" to={`/department/breakfast/${recipe.breakfastId}`}>View</Link></button>
                     </div>
 c
                 </div>

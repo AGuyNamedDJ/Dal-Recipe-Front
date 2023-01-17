@@ -4,78 +4,89 @@ import { useNavigate, useOutletContext, Link, useParams } from "react-router-dom
 
 // Functional Component
 const BreakfastDetail = () => {
-    const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
-
-    console.log("What i wanat see", breakfast[11])
+    const { breakfastsState: [breakfasts, setBreakfasts] } = useOutletContext();
     const navigate = useNavigate();
+    const {breakfastId} = useParams();
+    // const localBreakfast = breakfast.find(bf => bf.id == breakfastId)
 
-    // Establishing new State;
-    const [moreBreakfastDetail, setMoreBreakfastDetail] = useState({});
 
-    console.log("BreakfastId", breakfast.breakfastId)
+    const [localBreakfasts, setLocalBreakfasts] = useState({})
+    // const bfParams = useParams()
+    //     useEffect(() => {
+    //     function fetchBreakfast() {
+    //     // fetch using bfParams
+    //     setLocalBreakfasts(breakfastFromFetch)
+    //     }
+    //     fetchBreakfast()
+    //     }, [])
 
     // fetchBreakfastDetail
     useEffect (() => {
+        console.log("BID", breakfastId)
         async function fetchBreakfastDetail(){
             // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/:${breakfast.breakfastId}`,{
-                headers: {
-                    'Content-Type' : 'application/json'
-                }
-            })
-            // Translate the promise data;
-            console.log("Response:", detailedResponse)
-            const detailedData = await detailedResponse.json();
-            console.log("Here is translated Json:", detailedData)
+            try{
 
+                const response = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/${breakfastId}`,{
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+                // Translate the promise data;
+                console.log("Response:", response)
+                const breakfast = await response.json();
+                console.log("Here is translated Json:", breakfast)
+                setLocalBreakfasts(breakfast)
+            } catch (error)
+                {console.error(error)}
             // Set the State
-            setMoreBreakfastDetail(detailedData)
         }
         fetchBreakfastDetail()
     }, [])
     
-    console.log("moreBreakfastDetail:", moreBreakfastDetail)
+    // console.log("moreBreakfastDetail:", moreBreakfastDetail)
+    // console.log("breakfast", breakfastId)
     
     // Return
     return(
         <div className="more-detail">
             {/* Name */}
             {
-                moreBreakfastDetail.breakfastName ?
-                <p id="recipe-detail-name">{moreBreakfastDetail.breakfastName}</p>:
+                localBreakfasts.breakfastName ?
+                <p id="localBreakfasts.detail-name">{localBreakfasts.breakfastName}</p>:
                 <p>Name can not be viewed</p>
             }
 
             {/* Description */}
             {
-                moreBreakfastDetail.description ?
-                <p id="recipe-detail-description">{moreBreakfastDetail.description}</p>:
+                localBreakfasts.description ?
+                <p id="localBreakfasts.detail-description">{localBreakfasts.description}</p>:
                 <p>Description can not be viewed</p>
             }
 
             {/* Image */}
             {
-                moreBreakfastDetail.image ?
-                <img src={moreBreakfastDetail.image} id="recipe-detail-image"></img>:
+                localBreakfasts.image ?
+                <img src={localBreakfasts.image} id="localBreakfasts.detail-image"></img>:
                 <p>Image can not be viewed</p>
             }
             
             <br></br>
-            <p id="recipe-detail-subtitle">Ingredients</p>
+            <p id="localBreakfasts.detail-subtitle">Ingredients</p>
             
             {/* Ingredients */}
             {
-                moreBreakfastDetail.ingredients ?
-                <p id="recipe-detail-ingredients">{moreBreakfastDetail.ingredients}</p>:
+                localBreakfasts.ingredients ?
+                <p id="localBreakfasts.detail-ingredients">{localBreakfasts.ingredients}</p>:
                 <p>Ingredients can not be viewed</p>
             }
             
             <br></br>
-            <p id="recipe-detail-subtitle">Method</p>
+            <p id="localBreakfasts.detail-subtitle">Method</p>
             {/* Instructions */}
             {
-                moreBreakfastDetail.instructions ?
-                <p id="recipe-detail-instructions">Instructions: {moreBreakfastDetail.instructions}</p>:
+                localBreakfasts.instructions ?
+                <p id="localBreakfasts.detail-instructions">Instructions: {localBreakfasts.instructions}</p>:
                 <p>Instructions can not be viewed</p>
             }
             

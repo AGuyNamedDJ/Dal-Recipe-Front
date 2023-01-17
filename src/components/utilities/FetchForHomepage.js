@@ -1,30 +1,32 @@
 // Import
 import React, { useState, useEffect} from "react";
 import Navbar from "./Navbar";
-import { Outlet, useNavigate, useOutletContext, useParams} from "react-router-dom"
+import { Outlet} from "react-router-dom"
 
 // State
 const FetchForHomepage = () => {
     // Establishing new State;
-    const [department, setDepartment] = useState ([]);
+    const [departments, setDepartments] = useState ([]);
         // The Getter,  The Setter
-    const [breakfast, setBreakfast] = useState ([]);
+    const [breakfasts, setBreakfasts] = useState ([]);
     const [desserts, setDesserts] = useState ([]);
     const [entrees, setEntrees] = useState ([]);
     const [sides, setSides] = useState ([]);
     const contextObject = {
-        departmentState: [department, setDepartment],
-        breakfastState: [breakfast, setBreakfast],
+        departmentState: [departments, setDepartments],
+        breakfastsState: [breakfasts, setBreakfasts],
         entreesState: [entrees, setEntrees],
         dessertsState: [desserts, setDesserts],
         sidesState: [sides, setSides]
     }
-    const navigate = useNavigate();
+
+    // Establishing new State;
+    // const [moreBreakfastDetail, setMoreBreakfastDetail] = useState({});
 
 // useEffects
-    // fetchBreakfastData
+    // fetchbreakfastsData
     useEffect(() => {
-        async function fetchBreakfastData () {
+        async function fetchbreakfastsData () {
             try {
                 // Fetch data;
                 const response = await fetch ("https://dal-recipe-back.onrender.com/api/breakfast",{
@@ -33,18 +35,18 @@ const FetchForHomepage = () => {
                     }
                 })
                 //Translate the promise data;
-                // console.log("This is the Breakfast response:", response)
-                const breakfastData = await response.json();
-                // console.log("This is the translated Breakfast JSON response:", breakfastData);
+                // console.log("This is the breakfasts response:", response)
+                const breakfastsData = await response.json();
+                console.log("This is the translated breakfasts JSON response:", breakfastsData);
 
                 //Save the data to the State;
-                setBreakfast(breakfastData)
+                setBreakfasts(breakfastsData)
             } catch (error) {
-                console.log("Error fetching Breakfast Data:" )
+                console.log("Error fetching breakfasts Data:" )
                 console.log(error);
             }
         }
-        fetchBreakfastData();
+        fetchbreakfastsData();
     }, [])
 
     // fetchDepartmentData
@@ -63,7 +65,7 @@ const FetchForHomepage = () => {
                 // console.log("This is the ranslated Department JSON response:", departmentData);
 
                 // Save the data to the State;
-                setDepartment(departmentData)
+                setDepartments(departmentData)
             } catch (error) {
                 console.log("Error fetching Department Data:" )
                 console.log(error);
