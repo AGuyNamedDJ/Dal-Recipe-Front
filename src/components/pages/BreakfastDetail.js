@@ -44,7 +44,7 @@ const BreakfastDetail = () => {
             {/* Description */}
             {
                 moreBreakfastDetail.description ?
-                <p id="recipe-detail-description">Recipe Description: {moreBreakfastDetail.description}</p>:
+                <p id="recipe-detail-description">{moreBreakfastDetail.description}</p>:
                 <p>Description can not be viewed</p>
             }
 
@@ -54,14 +54,19 @@ const BreakfastDetail = () => {
                 <img src={moreBreakfastDetail.image} id="recipe-detail-image"></img>:
                 <p>Image can not be viewed</p>
             }
-                    
+            
+            <br></br>
+            <p id="recipe-detail-subtitle">Ingredients</p>
+            
             {/* Ingredients */}
             {
                 moreBreakfastDetail.ingredients ?
-                <p id="recipe-detail-ingredients">Ingredients Needed: {moreBreakfastDetail.ingredients}</p>:
+                <p id="recipe-detail-ingredients">{moreBreakfastDetail.ingredients}</p>:
                 <p>Ingredients can not be viewed</p>
             }
             
+            <br></br>
+            <p id="recipe-detail-subtitle">Method</p>
             {/* Instructions */}
             {
                 moreBreakfastDetail.instructions ?

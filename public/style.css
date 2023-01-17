@@ -285,6 +285,7 @@ body {
     font-size: 30px;
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: -25px;
 
 }
 
@@ -299,10 +300,18 @@ body {
     font-size: 30px;
     margin-left: 20%;
     margin-right: 20%;
+
 }
 
 #recipe-detail-instructions{
     font-size: 30px;
     margin-left: 20%;
     margin-right: 20%;
+}
+
+#recipe-detail-subtitle{
+    font-size: 45px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-shadow: 3px 4px #b6713c;
 }
