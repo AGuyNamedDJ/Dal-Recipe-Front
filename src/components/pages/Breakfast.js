@@ -6,6 +6,29 @@ import { Link, useOutletContext, useParams } from "react-router-dom";
 const Breakfast = () => {
     const { breakfastState: [breakfast, setBreakfast] } = useOutletContext();
 
+    // Establishing new State;
+    const [moreBreakfastDetail, setMoreBreakfastDetail] = useState({});
+
+    // fetchBreakfastDetail
+    useEffect (() => {
+        async function fetchBreakfastDetail(){
+            // Fetch;
+            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/:${breakfast.breakfastId}`,{
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            })
+            // Translate the promise data;
+            console.log("Response:", detailedResponse)
+            const detailedData = await detailedResponse.json();
+            console.log("Here is translated Json:", detailedData)
+
+            // Set the State
+            setMoreBreakfastDetail(detailedData)
+        }
+        fetchBreakfastDetail()
+    }, [])
+
     {/* This return format is to map all. */}
     return(
         
@@ -23,7 +46,7 @@ const Breakfast = () => {
                         <p id="recipe-text">{recipe.breakfastName}</p>
                         <p id="recipe-type">Serving Size: {recipe.serving_size}</p>
                         <p id="recipe-ttp">Prep Time: {recipe.time_to_prepare}</p>
-                        <button id="view-recipe-button"><Link id="view-recipe-button" class="link" to={`/department/breakfast/${recipe.breakfastId}`}>View</Link></button>
+                        <button id="view-recipe-button"><Link id="view-recipe-button" class="link" to={`/department/breakfast/:${recipe.breakfastId}`}>View</Link></button>
                     </div>
 c
                 </div>
@@ -35,7 +58,3 @@ c
 // Export
 export default Breakfast;
 
-{/* <div key={item.breakfastId}>
-<h2>{item.breakfastName}</h2>
-<p>{item.image}</p>
-</div> */}

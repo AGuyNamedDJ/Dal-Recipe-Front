@@ -11,12 +11,16 @@ import HomePage from "./components/utilities/HomePage";
 import Search from "./components/utilities/Search";
 
 // Import Pages
+import Blog from "./components/pages/Blog";
 import Breakfast from "./components/pages/Breakfast";
 import BreakfastDetail from "./components/pages/BreakfastDetail";
 import Department from "./components/pages/Department";
 import Desserts from "./components/pages/Desserts";
+import DessertsDetail from "./components/pages/DessertsDetail";
 import Entrees from "./components/pages/Entrees";
+import EntreesDetail from "./components/pages/EntreesDetail";
 import Sides from "./components/pages/Sides";
+import SidesDetail from "./components/pages/SidesDetail";
 
 // Router
 const router = createBrowserRouter([
@@ -32,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "/aboutus",
                 element: <AboutUs />
+            },
+            {
+                path: "/blog",
+                element: <Blog />
             },
             {
                 path: "/department/breakfast",
@@ -50,12 +58,24 @@ const router = createBrowserRouter([
                 element: <Desserts />
             },
             {
+                path: "/department/desserts/:dessertsId",
+                element: <DessertsDetail />
+            },
+            {
                 path: "/department/entrees",
                 element: <Entrees />
             },
             {
+                path: "/department/entrees/:entreesId",
+                element: <EntreesDetail />
+            },
+            {
                 path: "/department/sides",
                 element: <Sides />
+            },
+            {
+                path: "/department/sides/:sidesId",
+                element: <SidesDetail />
             },
             {
                 path: "/search",

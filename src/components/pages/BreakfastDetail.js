@@ -18,7 +18,7 @@ const BreakfastDetail = () => {
     useEffect (() => {
         async function fetchBreakfastDetail(){
             // Fetch;
-            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/${breakfast.breakfastId}`,{
+            const detailedResponse = await fetch (`https://dal-recipe-back.onrender.com/api/breakfast/:${breakfast.breakfastId}`,{
                 headers: {
                     'Content-Type' : 'application/json'
                 }
