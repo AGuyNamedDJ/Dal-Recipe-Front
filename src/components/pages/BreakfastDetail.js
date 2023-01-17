@@ -53,40 +53,40 @@ const BreakfastDetail = () => {
             {/* Name */}
             {
                 localBreakfasts.breakfastName ?
-                <p id="localBreakfasts.detail-name">{localBreakfasts.breakfastName}</p>:
+                <p id="recipe-detail-name">{localBreakfasts.breakfastName}</p>:
                 <p>Name can not be viewed</p>
             }
 
             {/* Description */}
             {
                 localBreakfasts.description ?
-                <p id="localBreakfasts.detail-description">{localBreakfasts.description}</p>:
+                <p id="recipe-detail-description">{localBreakfasts.description}</p>:
                 <p>Description can not be viewed</p>
             }
 
             {/* Image */}
             {
                 localBreakfasts.image ?
-                <img src={localBreakfasts.image} id="localBreakfasts.detail-image"></img>:
+                <img src={localBreakfasts.image} id="recipe-detail-image"></img>:
                 <p>Image can not be viewed</p>
             }
             
             <br></br>
-            <p id="localBreakfasts.detail-subtitle">Ingredients</p>
+            <p id="recipe-detail-subtitle">Ingredients</p>
             
             {/* Ingredients */}
             {
                 localBreakfasts.ingredients ?
-                <p id="localBreakfasts.detail-ingredients">{localBreakfasts.ingredients}</p>:
+                <p id="recipe-detail-ingredients">{localBreakfasts.ingredients}</p>:
                 <p>Ingredients can not be viewed</p>
             }
             
             <br></br>
-            <p id="localBreakfasts.detail-subtitle">Method</p>
+            <p id="recipe-detail-subtitle">Method</p>
             {/* Instructions */}
             {
                 localBreakfasts.instructions ?
-                <p id="localBreakfasts.detail-instructions">Instructions: {localBreakfasts.instructions}</p>:
+                <p id="recipe-detail-instructions">Instructions: {localBreakfasts.instructions}</p>:
                 <p>Instructions can not be viewed</p>
             }
             

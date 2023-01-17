@@ -28,7 +28,6 @@ const Breakfast = () => {
                         <p id="recipe-text">{recipe.breakfastName}</p>
                         <p id="recipe-type">Serving Size: {recipe.serving_size}</p>
                         <p id="recipe-ttp">Prep Time: {recipe.time_to_prepare}</p>
-                        <p id="recipe-ttp">Id: {recipe.breakfastId}</p>
                         <button id="view-recipe-button"><Link id="view-recipe-button" className="link" to={`/department/breakfast/${recipe.breakfastId}`}>View</Link></button>
                     </div>
 c
